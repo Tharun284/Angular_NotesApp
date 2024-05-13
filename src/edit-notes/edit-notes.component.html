@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Edit Note</h2>
+  <form [formGroup]="editNoteForm" (ngSubmit)="saveChanges()">
+    <div>
+      <label for="note-title">
+        Title:
+        <input id="note-title" formControlName="title" />
+      </label>
+    </div>
+    <div>
+      <label for="note-text">
+        Text:
+        <input id="note-text" formControlName="text" />
+      </label>
+    </div>
+    <nav>
+      <button
+        type="button"
+        class="button"
+        type="submit"
+        [disabled]="!editNoteForm.valid"
+      >
+        Save Changes
+      </button>
+      <button routerLink="">Back to List</button>
+    </nav>
+  </form>
+</div>
